@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jovem Aprendiz | Village Paineiras Club</title>
+
+<style>
+:root {
+  --navy: #10243b;
+  --blue: #1e5b86;
+  --gold: #e8bd62;
+  --paper: #f4f7fa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--paper);
+  color: #172536;
+}
+
+.top {
+  background: linear-gradient(120deg,#10243b,#1e5b86);
+  color: white;
+  padding: 34px 20px 54px;
+  text-align: center;
+}
+
+.brand {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f1d99f;
+}
+
+h1 {
+  margin: 12px 0 8px;
+  font-size: clamp(27px,5vw,42px);
+}
+
+.top p { color: #e4edf5; }
+
+main {
+  width: min(620px,calc(100% - 32px));
+  margin: -28px auto 40px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 12px 35px #10243b18;
+}
+
+.tag {
+  display: inline-block;
+  background: #fff4d8;
+  color: #785516;
+  padding: 7px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h2 { margin: 18px 0 8px; }
+
+.muted {
+  color: #657487;
+  line-height: 1.5;
+}
+
+label {
+  display: block;
+  margin: 18px 0 7px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cbd5df;
+  border-radius: 10px;
+  font-size: 16px;
+  background: white;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 22px;
+  background: var(--blue);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fine {
+  font-size: 12px;
+  color: #718096;
+  text-align: center;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+.hidden { display: none; }
+
+#reveal {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(circle at top,#fff9e8,#f5f7fb 60%);
+  text-align: center;
+}
+
+.reveal-card {
+  width: min(650px,100%);
+}
+
+.egg-stage {
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto 12px;
+}
+
+.egg {
+  width: 130px;
+  height: 170px;
+  position: relative;
+}
+
+.half {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#fff,#f4e8ce);
+  border: 3px solid #d8c8a9;
+  border-radius: 52% 48% 48% 52% / 62% 62% 38% 38%;
+  box-shadow: 0 10px 20px #6b5b3b22;
+}
+
+.half.left {
+  clip-path: polygon(0 0,100% 0,50% 48%,100% 100%,0 100%);
+  animation: crackL 1.1s ease-out .3s forwards;
+}
+
+.half.right {
+  clip-path: polygon(0 0,100% 0,100% 100%,0 100%,50% 48%);
+  animation: crackR 1.1s ease-out .3s forwards;
+}
+
+@keyframes crackL {
+  to { transform: translate(-58px,-8px) rotate(-22deg); }
+}
+
+@keyframes crackR {
+  to { transform: translate(58px,-8px) rotate(22deg); }
+}
+
+.spark {
+  position: absolute;
+  font-size: 24px;
+  animation: pop 1.1s ease-out .5s both;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(.2); }
+  to { opacity: 1; transform: scale(1.3); }
+}
+
+#message {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: show .7s ease-out 1.25s forwards;
+}
+
+@keyframes show {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#message h1 {
+  color: #10243b;
+  font-size: clamp(27px,6vw,44px);
+  line-height: 1.15;
+}
+
+#message p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.laugh {
+  color: #1e5b86;
+  font-weight: bold;
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: #7a8795;
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<section id="application">
+
+<header class="top">
+  <div class="brand">Village Paineiras Club</div>
+  <h1>Oportunidade Jovem Aprendiz</h1>
+  <p>Dê o primeiro passo para sua experiência profissional.</p>
+</header>
+
+<main>
+<div class="card">
+
+<span class="tag">INSCRIÇÕES • SIMULAÇÃO</span>
+
+<h2>Faça seu pré-cadastro</h2>
+
+<p class="muted">
+Preencha os dados abaixo para participar da seleção fictícia de Jovem Aprendiz.
+</p>
+
+<form id="form">
+
+<label for="name">Nome</label>
+<input id="name" maxlength="45"
+placeholder="Como você se chama?" required>
+
+<label for="area">Área de interesse</label>
+
+<select id="area" required>
+<option value="">Selecione uma área</option>
+<option>Atendimento</option>
+<option>Organização de eventos</option>
+<option>Administrativo</option>
+<option>Comunicação</option>
+</select>
+
+<button type="submit">Enviar pré-cadastro</button>
+
+</form>
+
+<p class="fine">
+Esta é uma brincadeira fictícia, não é uma vaga real e não tem vínculo com o Village Paineiras Club. Nenhum dado é enviado ou armazenado. Não informe dados pessoais.
+</p>
+
+</div>
+</main>
+</section>
+
+<section id="reveal" class="hidden">
+
+<div class="reveal-card">
+
+<div class="egg-stage">
+
+<div class="egg">
+<div class="half left"></div>
+<div class="half right"></div>
+</div>
+
+<span class="spark" style="left:25%;top:20%">✦</span>
+<span class="spark" style="right:23%;top:28%">✧</span>
+
+</div>
+
+<div id="message">
+
+<span class="tag">PROCESSO SELETIVO FINALIZADO</span>
+
+<h1 id="personal-message"></h1>
+
+<p class="laugh">KAKAKAKAKAKA 🥚</p>
+
+<p>
+Era pegadinha! Não existe inscrição nem vaga sendo oferecida por este site.
+</p>
+
+</div>
+
+<p class="disclaimer">
+Brincadeira fictícia, sem vínculo com o clube. Nenhuma informação foi enviada.
+</p>
+
+</div>
+</section>
+
+<script>
+
+const form = document.getElementById('form');
+
+form.addEventListener('submit', function(event) {
+
+  event.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+
+  if (!name) return;
+
+  document.getElementById('personal-message').textContent =
+  `${name}, você foi enganado! Agora a Denise vai sentar na sua cara kakakakaka`;
+
+  document.getElementById('application').classList.add('hidden');
+
+  document.getElementById('reveal').classList.remove('hidden');
+
+  document.title = 'Você foi enganado!';
+
+  window.scrollTo(0, 0);
+
+});
+
+</script>
+
+</body>
+</html>
